@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+<body>
+<div class="ui top fixed menu inverted green">
+    <div class="ui container">
+        <a class="item">
+            <i class="sidebar icon"></i> Menu
+        </a>
+        <div class="ui simple dropdown item">
+            More
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item"><i class="edit icon"></i> Edit Profile</a>
+                <a class="item"><i class="globe icon"></i> Choose Language</a>
+                <a class="item"><i class="settings icon"></i> Account Settings</a>
+            </div>
+        </div>
+        <div class="right item">
+            <div class="ui input"><input type="text" placeholder="Search..."></div>
+        </div>
+    </div>
+</div>
+<div class="ui bottom fixed segment">
+    <div class="ui inverted green labeled icon left inline vertical demo sidebar menu">
+        <a class="item">
+            <i class="block layout icon"></i> Inicio
+        </a>
+        <a class="item">
+            <i class="block layout icon"></i> Topics
+        </a>
+        <a class="item">
+            <i class="smile icon"></i> Friends
+        </a>
+        <a class="item">
+            <i class="calendar icon"></i> History
+        </a>
+    </div>
+    <div class="pusher">
+        <!--TODO: Quitar relleno-->
+        <div class="ui main two column padded grid">
+            <div class="column">
+                <p></p>
+            </div>
+            <div class="column">
+                <p></p>
+            </div>
+        </div>
+        <div class="ui one column stackable padded container">
+            <div class="column ten wide">
+                <div class=" ui segment">
+                    <div class="ui form">
+                        <h4 class="ui dividing header">Informacion del trabajador</h4>
+                        <div class="field">
+                            <label>Nombre</label>
+                            <div class="two fields">
+                                <div class="field">
+                                    <input type="text" placeholder="Nombre">
+                                </div>
+                                <div class="field">
+                                    <input type="text" placeholder="Apellidos">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Direccion</label>
+                            <div class="two fields">
+                                <div class="twelve wide field">
+                                    <input type="text" placeholder="Calle">
+                                </div>
+                                <div class="four wide field">
+                                    <input type="text" placeholder="Numero">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Contacto</label>
+                            <input type="number" placeholder="Numero telefonico">
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="active">
+                                <label>Activo?</label>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <button class="ui green button">
+                                Guardar
+                            </button>
+                            <button class="ui button">
+                                Descartar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui two column padded grid">
+            <div class="column">
+                <p></p>
+            </div>
+            <div class="column">
+                <p></p>
+            </div>
+        </div>
+        <div class="ui one column stackable padded container">
+            <table class="ui unstackable celled table">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Direccion</th>
+                    <th>Contacto</th>
+                    <th>Activo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Name">Juan Diego</td>
+                    <td data-label="last_name">Parra Mendez</td>
+                    <td data-label="adress">Calle 123</td>
+                    <td data-label="cell_number">3245656454</td>
+                    <td data-label="active">
+                        <div class="ui checked checkbox">
+                            <input type="checkbox" checked="">
+                            <label>Si</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Name">Juan Diego</td>
+                    <td data-label="last_name">Parra Mendez</td>
+                    <td data-label="adress">Calle 123</td>
+                    <td data-label="cell_number">3245656454</td>
+                    <td data-label="active">
+                        <div class="ui checked checkbox">
+                            <input type="checkbox" checked="">
+                            <label>Si</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Name">Juan Diego</td>
+                    <td data-label="last_name">Parra Mendez</td>
+                    <td data-label="adress">Calle 123</td>
+                    <td data-label="cell_number">3245656454</td>
+                    <td data-label="active">
+                        <div class="ui checked checkbox green">
+                            <input type="checkbox" checked="">
+                            <label>Si</label>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+<script>
+    $('.ui.sidebar').sidebar({
+        context: $('.bottom.segment')
+    })
+        .sidebar('attach events', '.menu .item')
+        .sidebar('setting', 'transition', 'slide out');
+</script>
+</body>
+</html>
