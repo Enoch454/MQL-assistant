@@ -14,4 +14,6 @@ class Sueldo(models.Model):
 
 
 class Operario(models.Model):
-    nombre = models.CharField(max_length=50, blank=False, null= False)
+    nombre = models.CharField(max_length=50, blank=False, null=False)
+    telefono = models.CharField(max_length=15)
+    direccion = models.CharField(max_length=100)
