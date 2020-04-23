@@ -1,0 +1,1 @@
+El secretario accese a una vista en la que se muestra un formulario con los datos del operario escogido ya predefinidos. El secetario edita los campos que desee, que pueden ser: Direccion, Telefono, Esta activo, y Sueldo base. Los campos de Direccion y telefono pueden ir vacios, los demas no. Despues de la edicion el secretario puede guadar los cambios o descartarlos.

@@ -1,0 +1,1 @@
+El secretario escoje el operario a despedir, para despues se cambia el estado del operario a depedido. Al tener un operario el estado de despedido dejara de aparecer en la agenda de operarios.

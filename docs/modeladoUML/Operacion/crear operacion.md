@@ -1,0 +1,1 @@
+Este caso es llamado por 'Registrar nuevo corte'. Despues de establecer el orden de las operaciones, el encargado registara que operarios trabajaran en ella(Operario.Asignar operacion) y establecera el minutaje estimado.

@@ -1,0 +1,1 @@
+El encargado recibe una notificacion a 5min antes de la hora de revisado, entonces el encargado revisa cuantas prendas ha procesado un operario y lo registra con respecto a esa hora, la operacion que esta realizando y el corte que se esta realizando. Estos datos se guardan en un historico del operario. Este proceso se realiza iterativamente con todos los operarios.

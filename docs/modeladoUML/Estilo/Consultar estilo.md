@@ -1,0 +1,1 @@
+El usuario, de una lista de estilos existentes, escoje a uno. Despues se mostraran en vista todos los datos que contiene el estilo escojido y una fotografia si es que existe.

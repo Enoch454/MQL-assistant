@@ -1,0 +1,1 @@
+En la vista de los operarios trabajando en alguna operacion se escoje a un operario, se guarda el historico de su minutaje realizado en operaciones anteriores durante el corte y se asigna a una operacion distinta

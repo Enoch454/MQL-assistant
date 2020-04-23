@@ -1,0 +1,1 @@
+El encargado escoge una operacion y despues de una lista de operarios sin asignar a una operacion a alguno para asignarlo a una operacion de algun corte que esté en proceso.

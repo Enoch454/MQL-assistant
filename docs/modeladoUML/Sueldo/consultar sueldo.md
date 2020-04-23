@@ -1,0 +1,1 @@
+el sueldo se debe de calcular automaticamente cuando la semana termine. Esto es en medida de los bonos que se hayan logrado al superar o acercarce en cierta medida al estimado de operaciones por minuto en cierta operacion.  

@@ -1,0 +1,1 @@
+El encargado escoje un dia de la semana, por defecto se mostrara el dia presente. Entonces el encargado escoje alguna de las operaciones que se estan realizando ese día. Entonces se mostrará el minutaje estimado y el minutaje real de los operarios a lo largo de las distintas horas de revision del dia.

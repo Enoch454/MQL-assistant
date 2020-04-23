@@ -1,0 +1,1 @@
+Si lo desea tambien se dirige a una opcion especial para consultar los operarios despedidos. En ella ve Nombre, Dirección, Número telefonico y Sueldo base que tenia el operario

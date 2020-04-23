@@ -1,0 +1,1 @@
+Al editar el corte se podran cambiar valores como la cantidad meta de piezas, el orden de las operaciones.

@@ -1,0 +1,1 @@
+Al editar una operacion, el encargado sera capas de cambiar el minutaje estimado. Tambien puede cambiar que operarios trabajan en ella(Operario.Cambiar de operacion)

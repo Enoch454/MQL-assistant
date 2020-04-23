@@ -1,0 +1,1 @@
+El encargado crea una hora extra asignandole datos como la hora, fecha y las operaciones a realizar. El encargado despues escoje a que operarios trabajaran en esa hora extra.

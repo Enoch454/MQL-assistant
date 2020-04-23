@@ -1,0 +1,1 @@
+para ello se escoje un dia primero, despues de escoje que operacion se consulta y a continuacion de ve una tabla con cun complejo de informacion sobre la operacion trabajada en ese dia. Se habla del minutaje estimado, minutaje promedio de la operacio y por operario, minutaje real por hora, entre otros datos, progreso sobre la meta, etc.

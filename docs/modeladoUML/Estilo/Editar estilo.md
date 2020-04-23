@@ -1,0 +1,1 @@
+El encargado, de una lista de estilos existentes, escoje uno. A continuacion se muestra un formulario en el que puede editar datos datos del estilo, permitiendo dejar vacio el campo de la fotografia adjunta. Despues el encargado guarda los cambios.

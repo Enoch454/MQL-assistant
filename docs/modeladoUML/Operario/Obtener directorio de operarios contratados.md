@@ -1,0 +1,1 @@
+El secretario consulta en una tabla dinamica los datos de todos los operarios contratados por la empresa, mostrando los datos; Nombre, Dirección, Número telefonico, Sueldo base, si está Activo o en descanso.

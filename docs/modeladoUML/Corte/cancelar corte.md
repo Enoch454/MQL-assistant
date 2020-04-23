@@ -1,0 +1,1 @@
+El corte cambia de estatus, se establece el estatus de cancelado, guardando los datos generados hasta el momento y libreando a los operarios y al encargado que estaban ocupados en el.

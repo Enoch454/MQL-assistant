@@ -1,0 +1,1 @@
+Consultar corte permite ver el progreso de cada operacion sobre la cantidad meta de piezas. Tambien muestra la consulta de cada una de las operaciones por día.

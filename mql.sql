@@ -1,4 +1,5 @@
-CREATE DATABASE mql
+CREATE DATABASE mql;
+use mql;
 
 -------------------------------------------------------------------------------
 -- TABLE: DetalleEmpresa
