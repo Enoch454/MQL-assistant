@@ -1,26 +1,13 @@
+drop database if exists mql;
 CREATE DATABASE mql;
 use mql;
 
 -- -----------------------------------------------------------------------------
--- TABLE: Estilo
--- -----------------------------------------------------------------------------
-drop table if exists Estilo;
-create table Estilo(
-    idEstilo int not null,
-    nombre VARCHAR(50),
-    tipo VARCHAR(20),
-    descripcion VARCHAR(200),
-    imagenAdjunta BLOB,
-    PRIMARY KEY (idEstilo)
-);
--- grant select, insert, update, delete on Estilo to public;
-
--- -----------------------------------------------------------------------------
 -- TABLE: Usuario
 -- -----------------------------------------------------------------------------
-drop table if exists Usuario;
+-- drop table if exists Usuario;
 create table Usuario(
-    idUsuario int not null,
+    idUsuario int not null AUTO_INCREMENT,
     nickName VARCHAR(20),
     contraseña VARCHAR(20),
     PRIMARY KEY (idUsuario)
@@ -30,9 +17,9 @@ create table Usuario(
 -- -----------------------------------------------------------------------------
 -- TABLE: Admon
 -- -----------------------------------------------------------------------------
-drop table if exists Admon;
+-- drop table if exists Admon;
 create table Admon(
-    idAdmon int not null,
+    idAdmon int not null AUTO_INCREMENT,
     nombre VARCHAR(50),
     idUsuario int not null,
     PRIMARY KEY (idAdmon),
@@ -43,9 +30,9 @@ create table Admon(
 -- -----------------------------------------------------------------------------
 -- TABLE: Empresa
 -- -----------------------------------------------------------------------------
-drop table if exists Empresa;
+-- drop table if exists Empresa;
 create table Empresa(
-    idEmpresa int not null,
+    idEmpresa int not null AUTO_INCREMENT,
     nombre VARCHAR(50),
     telefono VARCHAR(10),
     direccion VARCHAR(50),
@@ -54,11 +41,27 @@ create table Empresa(
 -- grant select, insert, update, delete on Empresa to public
 
 -- -----------------------------------------------------------------------------
+-- TABLE: Estilo
+-- -----------------------------------------------------------------------------
+-- drop table if exists Estilo;
+create table Estilo(
+    idEstilo int not null AUTO_INCREMENT,
+    nombre VARCHAR(50),
+    tipo VARCHAR(20),
+    descripcion VARCHAR(200),
+    imagenAdjunta BLOB,
+    idEmpresa int,
+    CONSTRAINT fk_estilo_empresa FOREIGN KEY (idEmpresa) REFERENCES Empresa(idEmpresa),
+    PRIMARY KEY (idEstilo)
+);
+-- grant select, insert, update, delete on Estilo to public;
+
+-- -----------------------------------------------------------------------------
 -- TABLE: Secretario
 -- -----------------------------------------------------------------------------
-drop table if exists Secretario;
+-- drop table if exists Secretario;
 create table Secretario(
-    idSecretario int not null,
+    idSecretario int not null AUTO_INCREMENT,
     nombre VARCHAR(50),
     direccion VARCHAR(50),
     telefono VARCHAR(10),
@@ -73,9 +76,9 @@ create table Secretario(
 -- -----------------------------------------------------------------------------
 -- TABLE: Cliente
 -- -----------------------------------------------------------------------------
-drop table if exists Cliente;
+-- drop table if exists Cliente;
 create table Cliente(
-    idCliente int not null,
+    idCliente int not null AUTO_INCREMENT,
     nombre VARCHAR(50),
     telefono VARCHAR(10),
     direccion VARCHAR(50),
@@ -88,9 +91,9 @@ create table Cliente(
 -- -----------------------------------------------------------------------------
 -- TABLE: Encargado
 -- -----------------------------------------------------------------------------
-drop table if exists Encargado;
+-- drop table if exists Encargado;
 create table Encargado(
-    idEncargado int not null,
+    idEncargado int not null AUTO_INCREMENT,
     nombre VARCHAR(50),
     direccion VARCHAR(50),
     telefono VARCHAR(10),
@@ -105,9 +108,9 @@ create table Encargado(
 -- -----------------------------------------------------------------------------
 -- TABLE: Corte
 -- -----------------------------------------------------------------------------
-drop table if exists Corte;
+-- drop table if exists Corte;
 create table Corte(
-    idCorte int not null,
+    idCorte int not null AUTO_INCREMENT,
     fechaPedido date not null,
     fechaEntrega date,
     cantidadPiezas int not null,
@@ -125,24 +128,24 @@ create table Corte(
 -- -----------------------------------------------------------------------------
 -- TABLE: Operacion
 -- -----------------------------------------------------------------------------
-drop table if exists Operacion;
+-- drop table if exists Operacion;
 create table Operacion(
-      idOperacion int not null,
-      nombre int not null,
-      descripcion VARCHAR(100),
-      operacionPredecedora int,
-      idEstilo int not null,
-      PRIMARY KEY (idOperacion),
-      CONSTRAINT fk_operacion_estilo FOREIGN KEY (idEstilo) REFERENCES Estilo(idEstilo)
+    idOperacion int not null AUTO_INCREMENT,
+    nombre varchar(50),
+    descripcion VARCHAR(100),
+    operacionFutura int,
+    idEstilo int not null,
+    PRIMARY KEY (idOperacion),
+    CONSTRAINT fk_operacion_estilo FOREIGN KEY (idEstilo) REFERENCES Estilo(idEstilo)
 );
 -- grant select, insert, update, delete on Operacion to public
 
 -- -----------------------------------------------------------------------------
 -- TABLE: Bono_Respaldo
 -- -----------------------------------------------------------------------------
-drop table if exists Bono_Respaldo;
+-- drop table if exists Bono_Respaldo;
 create table Bono_Respaldo(
-    idBonoRespaldo int not null,
+    idBonoRespaldo int not null AUTO_INCREMENT,
     numPiezas int,
     porcentajeDelEstimado decimal,
     monto decimal,
@@ -155,12 +158,12 @@ create table Bono_Respaldo(
 -- -----------------------------------------------------------------------------
 -- TABLE: Hora
 -- -----------------------------------------------------------------------------
-drop table if exists Hora;
+-- drop table if exists Hora;
 create table Hora(
-    idHora int not null,
+    idHora int not null AUTO_INCREMENT,
     horaInicio time,
     horaFin time,
-    diaSemana VARCHAR(8),
+    diaSemana VARCHAR(9),
     enUso bit,
     esExtra bit,
     idEmpresa int not null,
@@ -172,12 +175,12 @@ create table Hora(
 -- -----------------------------------------------------------------------------
 -- TABLE: Corte_Operacion
 -- -----------------------------------------------------------------------------
-drop table if exists Corte_Operacion;
+-- drop table if exists Corte_Operacion;
 create table Corte_Operacion(
-    idCorteOperacion int not null,
+    idCorteOperacion int not null AUTO_INCREMENT,
     numPiezasProcesadas int,
     minutajeEstimado int,
-    corteOperacionPredecedora int,
+    corteOperacionFutura int,
     idCorte int not null,
     idOperacion int not null,
     PRIMARY KEY (idCorteOperacion),
@@ -189,9 +192,9 @@ create table Corte_Operacion(
 -- -----------------------------------------------------------------------------
 -- TABLE: Bono
 -- -----------------------------------------------------------------------------
-drop table if exists Bono;
+-- drop table if exists Bono;
 create table Bono(
-    idBono int not null,
+    idBono int not null AUTO_INCREMENT,
     numPiezas int,
     porcentajeDelEstimado decimal,
     monto decimal,
@@ -204,9 +207,9 @@ create table Bono(
 -- -----------------------------------------------------------------------------
 -- TABLE: Corte_Operacion_Hora
 -- -----------------------------------------------------------------------------
-drop table if exists Corte_Operacion_Hora;
+-- drop table if exists Corte_Operacion_Hora;
 create table Corte_Operacion_Hora(
-    idCorteOperacionHora int not null,
+    idCorteOperacionHora int not null AUTO_INCREMENT,
     fecha date,
     idCorteOperacion int not null,
     idHora int not null,
@@ -219,9 +222,9 @@ create table Corte_Operacion_Hora(
 -- -----------------------------------------------------------------------------
 -- TABLE: Operario
 -- -----------------------------------------------------------------------------
-drop table if exists Operario;
+-- drop table if exists Operario;
 create table Operario(
-    idOperario int not null,
+    idOperario int not null AUTO_INCREMENT,
     nombre varchar(50),
     telefono varchar(10),
     dirección varchar(50),
@@ -240,9 +243,9 @@ create table Operario(
 -- -----------------------------------------------------------------------------
 -- TABLE: Corte_Operacion_Hora_Operario
 -- -----------------------------------------------------------------------------
-drop table if exists Corte_Operacion_Hora_Operario;
+-- drop table if exists Corte_Operacion_Hora_Operario;
 create table Corte_Operacion_Hora_Operario(
-    idCorteOperacionHoraOperario int not null,
+    idCorteOperacionHoraOperario int not null AUTO_INCREMENT,
     numOperacionesRealizadas int,
     idCorteOperacionHora int not null,
     idOperario int not null,
@@ -255,9 +258,9 @@ create table Corte_Operacion_Hora_Operario(
 -- -----------------------------------------------------------------------------
 -- TABLE: Sueldo
 -- -----------------------------------------------------------------------------
-drop table if exists Sueldo;
+-- drop table if exists Sueldo;
 create table Sueldo(
-    idSueldo int not null,
+    idSueldo int not null AUTO_INCREMENT,
     fechaCorte date,
     fechaPago date,
     base decimal,
